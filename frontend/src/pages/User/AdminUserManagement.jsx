@@ -327,9 +327,9 @@ const getReceiptUrl = (filename) => {
   };
 
   const renderUsersTable = (userList) => (
-    <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gradient-to-r from-red-600 to-red-700">
+    <div className="overflow-x-auto rounded-lg border border-slate-700 bg-[#062043] shadow-lg">
+      <table className="min-w-full divide-y divide-slate-700">
+        <thead className="bg-[#111827]">
           <tr>
             <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
               Name
@@ -363,19 +363,19 @@ const getReceiptUrl = (filename) => {
             </th>
           </tr>
         </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="divide-y divide-slate-700 bg-[#062043]">
           {filteredUsers.map((user) => (
-            <tr key={user._id} className="hover:bg-gray-50 transition duration-150">
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            <tr key={user._id} className="transition duration-150 hover:bg-[#0d2747]">
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
                 {user.name}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-300">
                 {user.email}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-300">
                 {user.contactNumber}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 capitalize">
+              <td className="px-6 py-4 whitespace-nowrap text-sm capitalize text-slate-300">
                 {user.membershipType}
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
@@ -384,10 +384,10 @@ const getReceiptUrl = (filename) => {
               <td className="px-6 py-4 whitespace-nowrap">
                 {getExpirationBadge(user)}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-300">
                 {formatDate(user.membershipStartDate)}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-300">
                 {formatDate(user.membershipEndDate)}
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
@@ -403,7 +403,7 @@ const getReceiptUrl = (filename) => {
                     View Receipt
                   </button>
                 ) : (
-                  <span className="text-gray-400 text-xs">No receipt</span>
+                  <span className="text-xs text-slate-400">No receipt</span>
                 )}
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
@@ -447,7 +447,7 @@ const getReceiptUrl = (filename) => {
         </tbody>
       </table>
       {filteredUsers.length === 0 && (
-        <div className="text-center py-8 text-gray-500">
+        <div className="py-8 text-center text-slate-300">
           No users found matching your search criteria.
         </div>
       )}
@@ -463,17 +463,13 @@ const getReceiptUrl = (filename) => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#1f2937]">
       <StoreAdminSidebar />
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6" style={{ marginLeft: 240 }}>
+      <div className="min-h-screen bg-[#1f2937] p-6" style={{ marginLeft: 240 }}>
       {/* Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">
-            <span className="text-red-600">SUPREME</span>
-            <span className="text-gray-900">FITNESS</span>
-          </h1>
-          <p className="text-gray-600 mt-1">User Management Dashboard</p>
+          <h1 className="text-4xl font-bold text-white">User Management Dashboard</h1>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
           <button
@@ -498,11 +494,11 @@ const getReceiptUrl = (filename) => {
       </div>
 
       {/* Search Bar */}
-      <div className="bg-white rounded-lg shadow border border-gray-200 p-4 mb-6">
+      <div className="mb-6 rounded-lg border border-slate-700 bg-[#062043] p-4 shadow-lg">
         <div className="flex flex-col sm:flex-row gap-4 items-center">
           <div className="flex-1 w-full">
             <div className="relative">
-              <svg className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
@@ -510,11 +506,11 @@ const getReceiptUrl = (filename) => {
                 placeholder="Search by name, email, contact, or membership type..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                className="w-full rounded-lg border border-slate-600 bg-[#0d2747] py-2 pl-10 pr-4 text-white placeholder-slate-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
           </div>
-          <div className="text-sm text-gray-500">
+          <div className="text-sm text-slate-300">
             Showing {filteredUsers.length} of {
               activeTab === 'all' ? stats.total :
               activeTab === 'pending' ? stats.pending :
@@ -533,14 +529,14 @@ const getReceiptUrl = (filename) => {
           { key: 'expiringSoon', label: 'Expiring Soon', icon: '⚠️', color: 'from-orange-500 to-orange-600' },
           { key: 'expired', label: 'Expired', icon: '❌', color: 'from-red-500 to-red-600' }
         ].map((stat) => (
-          <div key={stat.key} className="bg-white rounded-lg shadow border border-gray-200 p-6 hover:shadow-lg transition duration-200">
+          <div key={stat.key} className="rounded-lg border border-slate-700 bg-[#062043] p-6 shadow-lg transition duration-200 hover:shadow-xl">
             <div className="flex items-center">
               <div className={`rounded-full bg-gradient-to-r ${stat.color} p-3 text-white`}>
                 <span className="text-xl">{stat.icon}</span>
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">{stat.label}</p>
-                <p className="text-2xl font-semibold text-gray-900">{stats[stat.key]}</p>
+                <p className="text-sm font-medium text-slate-300">{stat.label}</p>
+                <p className="text-2xl font-semibold text-white">{stats[stat.key]}</p>
               </div>
             </div>
           </div>
@@ -548,8 +544,8 @@ const getReceiptUrl = (filename) => {
       </div>
 
       {/* Tabs */}
-      <div className="bg-white rounded-lg shadow border border-gray-200 mb-6">
-        <div className="border-b border-gray-200">
+      <div className="mb-6 rounded-lg border border-slate-700 bg-[#062043] shadow-lg">
+        <div className="border-b border-slate-700">
           <nav className="flex -mb-px overflow-x-auto">
             {[
               { id: 'all', name: 'All Users', count: stats.total },
@@ -562,13 +558,13 @@ const getReceiptUrl = (filename) => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex-1 min-w-max py-4 px-6 text-center border-b-2 font-medium text-sm transition duration-200 ${
                   activeTab === tab.id
-                    ? 'border-red-600 text-red-600 bg-red-50'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    ? 'border-red-600 bg-[#0d2747] text-red-500'
+                    : 'border-transparent text-slate-300 hover:border-slate-500 hover:text-white'
                 }`}
               >
                 {tab.name} 
                 <span className={`ml-2 px-2 py-1 rounded-full text-xs ${
-                  activeTab === tab.id ? 'bg-red-100 text-red-800' : 'bg-gray-100 text-gray-800'
+                  activeTab === tab.id ? 'bg-red-100 text-red-800' : 'bg-slate-800 text-slate-200'
                 }`}>
                   {tab.count}
                 </span>
