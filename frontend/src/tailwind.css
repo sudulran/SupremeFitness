@@ -1,0 +1,40 @@
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component for dark select used by CustomSelect component */
+@layer components {
+	.dark-select {
+		@apply relative w-full;
+	}
+
+	.dark-select > button {
+		/* closed select */
+		@apply w-full rounded-xl border px-4 py-3 text-left text-white flex items-center justify-between;
+		background-color: #0c2546;
+		border-color: #173059;
+	}
+
+	.dark-select .dropdown-panel {
+		@apply absolute z-50 mt-2 w-full rounded-lg shadow-lg overflow-hidden;
+		background-color: #0a2341;
+		max-height: 320px;
+	}
+
+	.dark-select .dropdown-panel input {
+		@apply w-full rounded-md border px-3 py-2 text-white bg-[#05203b] placeholder:text-white/50;
+		border-color: #173059;
+	}
+
+	.dark-select .dropdown-panel ul li {
+		@apply cursor-pointer px-4 py-2 text-sm;
+		/* slightly lighter item background to contrast with the panel and card */
+		background-color: #1f2937; /* approx. tailwind bg-gray-800 */
+		color: #ffffff; /* full white for readability */
+	}
+
+	.dark-select .dropdown-panel ul li.highlight {
+		@apply bg-[#0f3a5f] text-white;
+	}
+}

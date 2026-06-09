@@ -1,0 +1,9 @@
+/* Minimal fallback for native selects (keep them readable if used outside CustomSelect)
+   The preferred styling for our custom selects is provided via Tailwind components
+   in `src/tailwind.css` and applied by adding the `dark-select` class to the
+   CustomSelect component usage. */
+
+select {
+  color: #e6eef8; /* gentle light text for native selects */
+  background-color: rgba(12,37,70,0.6);
+}
