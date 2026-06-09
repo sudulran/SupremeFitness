@@ -25,6 +25,7 @@ The project is designed to improve both gym operations and member experience by 
 - Axios
 - Material UI
 - Bootstrap
+- Tailwind CSS
 - Recharts
 - Stripe React SDK
 
@@ -224,21 +225,6 @@ The backend includes modules for:
 - Products
 - Cart
 - Payments
-
-## Security Notes
-
-- Do not commit `.env` files or production secrets
-- Keep `node_modules` out of version control
-- Use strong JWT secrets and secure database credentials
-- Use test keys for local Stripe development
-
-## Future Improvements
-
-- Role-based permission refinements
-- Automated testing coverage
-- Deployment configuration
-- Performance optimization
-- Enhanced reporting and analytics
 
 ## Author
 
